@@ -1,14 +1,35 @@
 var timeDisplayEl = $('#currentDay');
 
+// provides current date in requested format
 var rightNow = moment().format('dddd, MMMM Do');
 timeDisplayEl.text(rightNow);
 
-// function checkTime () {
-//     if (moment().isBefore(#row-id)) {
-//         $(this).addClass('future');
-//     } else if (moment().isAfter(#row-id)) {
-//         $(this).addClass('past');
-//     } else {
-//         $(this).addClass('present');
-//     }
-// }
+function checkTime() {
+    
+    // provides current hour of the day
+    var currentHour = moment().hours();
+    // console.log('Current Hour', currentHour);
+
+    var timeBlock = $('.time-block');
+
+    // checks each timeblock to determine styling
+    timeBlock.each(function() {
+
+        // parses id from schedule and returns an integer
+        var workHour = parseInt($(this).attr('id'));
+
+        // compares integers and adds appropriate classes
+        if (currentHour > workHour) {
+            $(this).addClass('past');
+            // console.log('Status', `${workHour} - Past`);   
+        } else if (currentHour === workHour) {
+            $(this).addClass('present');
+            // console.log('Status', `${workHour} - Present`); 
+        } else {
+            $(this).addClass('future');
+            // console.log('Status', `${workHour} - Future`);  
+        }
+    })
+}
+
+checkTime();
