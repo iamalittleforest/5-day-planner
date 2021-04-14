@@ -21,11 +21,6 @@ textarea {
   border-bottom: 10px solid black;
 }
 
-.status {
-  text-align: center;
-  padding-bottom: 10px;
-}
-
 .description {
   white-space: pre-wrap;
 }

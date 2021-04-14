@@ -14,10 +14,10 @@ function checkTime() {
 
     var timeBlockEl = $(".time-block");
 
-    // checks each timeblock to determine styling
+    // checks each timeBlock to determine styling
     timeBlockEl.each(function() {
 
-        // parses id from schedule and returns an integer
+        // parses id and returns an integer
         var workHour = parseInt($(this).attr("id"));
 
         // compares integers and adds appropriate classes
@@ -37,7 +37,7 @@ function checkTime() {
 checkTime();
 
 
-// save text
+// save data
 var saveBtnEl = $(".saveBtn");
 
 saveBtnEl.click(function(event) {   
@@ -47,16 +47,37 @@ saveBtnEl.click(function(event) {
     var timeBlockEl = $(this).parent().attr("id");
     var textareaEl = $(this).siblings(".textarea").val().trim();
 
-    // saving input to local storage
+    // saving data to localStorage
     localStorage.setItem(timeBlockEl, JSON.stringify(textareaEl));
     // console.log(timeBlockEl, textareaEl);
 
-    // display message when appointment is saved
-    var statusEl = $(".status");
+    // display alert when appointment is saved
+    var alertEl = $(".alert");
     
-    statusEl.text("Appointment Added to localStorage");
+    alertEl.addClass("show");
     setTimeout(function () {
-        statusEl.text("");    
+        alertEl.removeClass("show");   
     }, 1000);
-
 })
+
+
+// render data
+function renderData() {
+    var timeBlockEl = $(".time-block");
+
+    // checks each timeBlock and loads data
+    timeBlockEl.each(function() {
+
+        // accessing textarea associated with each timeBlockId
+        var timeBlockId = $(this).attr("id");
+        var textareaEl = JSON.parse(localStorage.getItem(timeBlockId));
+
+        // if textareaEl has data, data is rendered from localStorage
+        if (textareaEl !== null) {
+            $(this).children(".textarea").val(textareaEl);
+            // console.log(timeBlockId, textareaEl);
+        }
+    })
+}
+
+renderData();
