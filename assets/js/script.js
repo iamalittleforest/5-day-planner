@@ -43,13 +43,13 @@ var saveBtnEl = $(".saveBtn");
 saveBtnEl.click(function(event) {   
     event.preventDefault();
 
-    // accessing timeBlock and textarea based on location of saveBtn
+    // accessing timeBlock and description based on location of saveBtn
     var timeBlockEl = $(this).parent().attr("id");
-    var textareaEl = $(this).siblings(".textarea").val().trim();
+    var descriptionEl = $(this).siblings(".description").val().trim();
 
     // saving data to localStorage
-    localStorage.setItem(timeBlockEl, JSON.stringify(textareaEl));
-    // console.log(timeBlockEl, textareaEl);
+    localStorage.setItem(timeBlockEl, JSON.stringify(descriptionEl));
+    // console.log(timeBlockEl, descriptionEl);
 
     // display alert when appointment is saved
     var alertEl = $(".alert");
@@ -68,14 +68,14 @@ function renderData() {
     // checks each timeBlock and loads data
     timeBlockEl.each(function() {
 
-        // accessing textarea associated with each timeBlockId
+        // accessing description associated with each timeBlockId
         var timeBlockId = $(this).attr("id");
-        var textareaEl = JSON.parse(localStorage.getItem(timeBlockId));
+        var descriptionEl = JSON.parse(localStorage.getItem(timeBlockId));
 
-        // if textareaEl has data, data is rendered from localStorage
-        if (textareaEl !== null) {
-            $(this).children(".textarea").val(textareaEl);
-            // console.log(timeBlockId, textareaEl);
+        // if descriptionEl has data, data is rendered from localStorage
+        if (descriptionEl !== null) {
+            $(this).children(".description").val(descriptionEl);
+            // console.log(timeBlockId, descriptionEl);
         }
     })
 }
