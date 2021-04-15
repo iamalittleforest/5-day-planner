@@ -1,4 +1,4 @@
-# 5-work-day-scheduler
+# 5-day-planner
 Week 5 Homework
 
 # Description
