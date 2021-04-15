@@ -8,4 +8,4 @@ Creating a calendar application that allows a user to save events for each hour 
 <img src="assets/images/readme-screenshot.png" width="500">
 
 # Link
-https://iamalittleforest.github.io/5-work-day-scheduler/
+https://iamalittleforest.github.io/5-day-planner/
