@@ -1,11 +1,16 @@
-# 5-day-planner
-Week 5 Homework
+# Day Planner
 
-# Description
-Creating a calendar application that allows a user to save events for each hour of the day using dynamically updated HTML and CSS powered by jQuery
+## Link
+https://iamalittleforest.github.io/5-day-planner/
 
-# Screenshot
+## Description
+This calendar application allows a user to save events for each hour of the day using dynamically updated HTML and CSS powered by jQuery.
+
+## Screenshot
 <img src="assets/images/readme-screenshot.png" width="500">
 
-# Link
-https://iamalittleforest.github.io/5-day-planner/
+## License
+MIT License
+
+## Contact Information
+Wendy Kobayashi (<wykobayashi@gmail.com>)
