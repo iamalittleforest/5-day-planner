@@ -9,7 +9,7 @@ https://iamalittleforest.github.io/5-day-planner/
 * Javascript
 
 ## Description
-This calendar application allows a user to save events for each hour of the day using dynamically updated HTML and CSS powered by jQuery.
+A calendar application that allows a user to save events for each hour of the day.
 
 ## Screenshot
 <img src="assets/images/readme-screenshot.png" width="500">
